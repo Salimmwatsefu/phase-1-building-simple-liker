@@ -15,7 +15,7 @@ document.querySelectorAll(".like-glyph").forEach(li => li.addEventListener("clic
       myHeart.classList.remove("activated-heart")
     } else {
     myHeart.textContent = FULL_HEART
-    mylearnHeart.classList.add('activated-heart')
+    myHeart.classList.add('activated-heart')
     }
   })
   .catch((error) => {
