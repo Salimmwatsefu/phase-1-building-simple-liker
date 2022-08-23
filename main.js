@@ -4,6 +4,33 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+//This returns a Nodelist of all elements within the document with a class attribute of like-glyph
+const modal = document.querySelector("#modal");
+modal.className = "hidden"
+document.querySelectorAll(".like-glyph").forEach(li => li.addEventListener("click",(e) => {
+  mimicServerCall().then(() => {
+    const myHeart = e.target
+    if(myHeart.textContent === FULL_HEART) {
+      myHeart.textContent = EMPTY_HEART;
+      myHeart.classList.remove("activated-heart")
+    } else {
+    myHeart.textContent = FULL_HEART
+    mylearnHeart.classList.add('activated-heart')
+    }
+  })
+  .catch((error) => {
+    modal.textContent = error
+    modal.classList.remove("hidden")
+    setTimeout(() => {
+      modal.classList.add("hidden")
+    },3000)
+  })
+}))
+
+
+      
+
+
 
 
 
